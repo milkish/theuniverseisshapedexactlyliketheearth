@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title The Universe Is Shaped Exactly Like The Earth
+    %script{src: "http://code.jquery.com/jquery-1.7.1.min.js"}
+    %script{src: 'http://github.com/downloads/SteveSanderson/knockout/knockout-2.0.0.js'}
+    %script{src: "application.js"}
+    %link{href:'http://fonts.googleapis.com/css?family=Terminal+Dosis', rel:'stylesheet', type:'text/css'}
+    %link{type:"text/css", rel:"stylesheet", href:"application.css"}
+    / Knockout Templates
+    %script#photo-template{type:"text/html"}
+      .slide
+        %img.photo{data: {bind: "attr: {alt: title, src: display().url, 'data-index': index}"}}
+        / %p{data: {bind: "text: title"}}
+
+  %body
+    #instructions
+      Use your keyboard or mouse to navigate.
+      .keys.one
+        .key.up
+          .text &uarr;
+      .keys.three
+        .key.left
+          .text &larr;
+        .key.left
+          .text &darr;
+        .key.left
+          .text &rarr;
+
+      Click on a photo or press enter to see it full size.
+      .key.enter
+        .text Enter
+    #info-wrapper
+      #loading{data:{bind: "css: {isLoading: loading()}"}} Loading...
+      #name{data: {bind: "text: username()"}}
+      #title{data: {bind: "text: title()"}}
+    #light-box{data: {bind: "template: {name: 'photo-template', foreach: photos()}"}}
+
