@@ -27,9 +27,10 @@ _________________________________________________________________________
 * http://theuniverseisshapedexactlyliketheearth.com/#iamjwc
 * http://theuniverseisshapedexactlyliketheearth.com/#chicolin
 
-# Huh?
+# Build
 
-  All Gpl, no warranty.
+  build script depends on ruby >= 1.9, haml, coffeescript, uglifyjs, wget and... *nix  
+  `rake` runs the compilers and pulls down all js dependencies and minifies them into one file
 
 # Next
 
