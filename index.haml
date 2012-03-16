@@ -11,7 +11,7 @@
     %script#photo-template{type:"text/html"}
       .slide
         %img.photo{data: {bind: "attr: {alt: title, src: display().url, 'data-index': index}"}}
-        / %p{data: {bind: "text: title"}}
+
 
   %body
     %noscript
@@ -30,13 +30,14 @@
           .text &darr;
         .key.left
           .text &rarr;
-
       Click on a photo or press enter to see it full size.
       .key.enter
         .text Enter
+
     #info-wrapper
       #loading{data:{bind: "css: {isLoading: loading()}"}} Loading...
       #name{data: {bind: "text: username()"}}
       #title{data: {bind: "text: title()"}}
+
     #light-box{data: {bind: "template: {name: 'photo-template', foreach: photos()}"}}
 
